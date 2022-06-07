@@ -79,4 +79,12 @@ contract JustNft is ERC1155 {
         , badgeBase.image, "\",\"name\":\"", badgeBase.name, "\",\"description\":\"", badgeBase.description, "\",\"id\":", Strings.toString(badgeId), ",\"title\":\"", badgeBase.name, "\",\"type\":\"img\"}");
         return result;
     }
+
+    // todo, need change
+    function supportsInterface(bytes4 interfaceId) public view override(ERC1155) returns (bool) {
+        return
+        interfaceId == type(IERC1155).interfaceId ||
+        interfaceId == type(IERC1155MetadataURI).interfaceId ||
+        super.supportsInterface(interfaceId);
+    }
 }
