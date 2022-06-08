@@ -14,4 +14,4 @@ cluster solidity version
        ```
 
 ### how to use
-1. JustNft contract【[代码](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/JustNft.sol)】 【[文章](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/JustNft.md)】
+1. JustNft contract【[代码](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/JustNft.sol)】 【[描述](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/JustNft.md)】
