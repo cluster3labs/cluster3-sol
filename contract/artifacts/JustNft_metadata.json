@@ -155,6 +155,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address[]",
 						"name": "accounts",
 						"type": "address[]"
@@ -227,7 +246,7 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "baseId",
 						"type": "uint256"
 					}
 				],
@@ -274,15 +293,16 @@
 						"internalType": "uint256",
 						"name": "baseId",
 						"type": "uint256"
-					},
-					{
-						"internalType": "bytes",
-						"name": "data",
-						"type": "bytes"
 					}
 				],
 				"name": "mint",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "badgeId",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -544,11 +564,11 @@
 			]
 		},
 		"contract/JustNft.sol": {
-			"keccak256": "0x73b4cef08f93a82026db1614966e34ab9039f05e19fbec6ae32681f0eb926a14",
+			"keccak256": "0x04d3777787b730a9099f5eb5fa48da67f1bc4d14e493d3c378f483516aa5b95c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://174223cb1ab583d48b3e76ab7520155921b02efa35bc84987b69009ffef30eb7",
-				"dweb:/ipfs/QmU8we45kZSuij8QPpJNVWABXRMpi2iW23e4UWML9AQhe4"
+				"bzz-raw://2ee71382b5f78ba2c6f35976294304d9d8b60a62dc963653b8207f0b167cece8",
+				"dweb:/ipfs/QmSVd6wChH6LZeafkqkoTxjXEKPMVjND2Hu5756EZLSnEZ"
 			]
 		}
 	},
