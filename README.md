@@ -14,4 +14,4 @@ cluster solidity version
        ```
 
 ### how to use
-1. JustNft contract【[代码](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/Badge.sol)】 【[描述](https://git.alonedesert.com/zl/cluster-sol/src/branch/master/contract/Badge.md)】
+1. BadgeNft contract【[描述](https://github.com/wheesys/cluster3-sol/blob/master/contract/BadgeNft.md)】
