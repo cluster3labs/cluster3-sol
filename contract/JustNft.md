@@ -16,18 +16,18 @@
    address granteeToId;
    }
 3. // base id to base
-   mapping(uint256 => BadgeBase) baseMapping;
+   1. mapping(uint256 => BadgeBase) baseMapping;
 4. // badge id to badge
-   mapping(uint256 => Badge) badgeMapping;
+   1. mapping(uint256 => Badge) badgeMapping;
 5. // max base id
-   uint256 maxBaseId = 0;
+   1. uint256 maxBaseId = 0;
 6. // base id to max badge id about badges of this base
-   mapping(uint256 => uint256) public baseMaxBadgeId;
+   1. mapping(uint256 => uint256) public baseMaxBadgeId;
 7. address public owner;
 8. // address mapping to badge array
-   mapping(address => Badge[]) addressBadges;
+   1. mapping(address => Badge[]) addressBadges;
 9. // base mapping to badge array
-   mapping(uint256 => Badge[]) baseBadges;
+   1. mapping(uint256 => Badge[]) baseBadges;
 
 ### contract function
 1. defineBadge, define nft base msg
