@@ -38,6 +38,12 @@ contract JustNft is ERC1155 {
     // base id to max badge id about badges of this base
     mapping(uint256 => uint256) public baseMaxBadgeId;
 
+    // address mapping to badge array
+    mapping(address => Badge[]) addressBadges;
+
+    // base mapping to badge array
+    mapping(uint256 => Badge[]) baseBadges;
+
     address public owner;
 
     constructor() ERC1155("") {
@@ -57,15 +63,27 @@ contract JustNft is ERC1155 {
         baseMapping[baseId] = badgeBase;
     }
 
-    function mint(address to, uint256 amount, uint256 baseId, bytes memory data) public onlyOwner {
+    function mint(address to, uint256 amount, uint256 baseId) public onlyOwner returns (uint256 badgeId) {
         require(baseMapping[baseId].id != 0, "base not exits");
         require(to != address(0), "can not mint to the zero address");
-        uint256 maxBadgeId = baseMaxBadgeId[baseId];
-        maxBadgeId = maxBadgeId + 1;
-        baseMaxBadgeId[baseId] = maxBadgeId;
-        _mint(to, maxBadgeId, amount, data);
-        Badge memory badge = Badge(maxBadgeId, baseId, to, msg.sender, to);
-        badgeMapping[maxBadgeId] = badge;
+        // check left
+        BadgeBase memory badgeBase = baseMapping[baseId];
+        require(badgeBase.left > 0, "base left not enough");
+        badgeBase.left = badgeBase.left - 1;
+
+        // get badge id
+        uint256 oldMaxBadgeId = baseMaxBadgeId[baseId];
+        badgeId = oldMaxBadgeId + 1;
+        baseMaxBadgeId[baseId] = badgeId;
+
+        // mint
+        _mint(to, badgeId, amount, "");
+
+        // save data
+        Badge memory badge = Badge(badgeId, baseId, to, msg.sender, to);
+        addressBadges[to].push(badge);
+        baseBadges[baseId].push(badge);
+        badgeMapping[badgeId] = badge;
     }
 
     function uri(uint256 badgeId) override public view returns (string memory) {
@@ -80,11 +98,11 @@ contract JustNft is ERC1155 {
         return result;
     }
 
-    // todo, need change
-    function supportsInterface(bytes4 interfaceId) public view override(ERC1155) returns (bool) {
-        return
-        interfaceId == type(IERC1155).interfaceId ||
-        interfaceId == type(IERC1155MetadataURI).interfaceId ||
-        super.supportsInterface(interfaceId);
+    // todo, supportsInterface
+
+    // balanceOf
+    function balanceOf(address account, uint256 badgeId) public view override returns (uint256) {
+        require(account != address(0), "address zero is not a valid owner");
+        return addressBadges[account].length;
     }
 }
