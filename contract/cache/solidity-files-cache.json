@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/doc/cyber/cluster-sol/contract/contracts/BadgeNft.sol": {
-      "lastModificationDate": 1654677172855,
-      "contentHash": "e047c96d8d72b372870f7ab5ec535629",
+      "lastModificationDate": 1654743710068,
+      "contentHash": "a12b79a8a7b3f94342bde8b74ba12395",
       "sourceName": "contracts/BadgeNft.sol",
       "solcConfig": {
         "version": "0.8.12",
