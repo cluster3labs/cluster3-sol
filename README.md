@@ -14,7 +14,7 @@ cluster solidity version
        ```
 
 ### all contract
-1. BadgeNft contract【[描述](https://github.com/wheesys/cluster3-sol/blob/master/contract/BadgeNft.md)】
+1. BadgeNft contract【[描述](https://github.com/cluster3labs/cluster3-sol/blob/master/contract/contracts/BadgeNft.md)】
 
 
 ### deploy to god woken
